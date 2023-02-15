@@ -175,6 +175,22 @@ def lizhi():
             return ("励志古言API调取错误，请检查API是否正确申请或是否填写正确")
         
 
+#健康小提示API
+def health():
+    if (Whether_health!=False):
+        try:
+            conn = http.client.HTTPSConnection('apis.tianapi.com')  #接口域名
+            params = urllib.parse.urlencode({'key':tianxing_API})
+            headers = {'Content-type':'application/x-www-form-urlencoded'}
+            conn.request('POST','/healthtip/index',params,headers)
+            res = conn.getresponse()
+            data = res.read()
+            data = json.loads(data)
+            data = data["result"][0]["content"]
+            return data
+        except:
+             return ("健康小提示API调取错误，请检查API是否正确申请或是否填写正确")
+
 #下雨概率和建议
 def tip():
     if (Whether_tip!=False):
