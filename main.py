@@ -124,7 +124,7 @@ def caihongpi():
     if (Whether_caihongpi!=False):
         try:
             conn = http.client.HTTPSConnection('apis.tianapi.com')  #接口域名
-            params = urllib.parse.urlencode({'key':tianxing_API})
+            params = urllib.parse.urlencode({'key':'ae53a80e4145b23ed78a148ec00867ff'})
             headers = {'Content-type':'application/x-www-form-urlencoded'}
             conn.request('POST','/caihongpi/index',params,headers)
             res = conn.getresponse()
